@@ -1,5 +1,9 @@
+import newrelic from "newrelic";
 import express from "express";
-// const express = require( "express" );
+
+// Workaround to enforce including newrelic on dist/index.js
+const transaction = newrelic.getTransaction();
+
 const app = express();
 const port = 3000; // default port to listen
 
